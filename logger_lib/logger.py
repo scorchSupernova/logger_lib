@@ -2,7 +2,7 @@ import logging
 import sys
 
 from logger_lib.color import Color
-from logger_lib.utils import save_log_data
+# from logger_lib.utils import save_log_data
 
 
 class SSLogger(logging.getLoggerClass()):
@@ -53,23 +53,23 @@ class SSLogger(logging.getLoggerClass()):
         self.enable_console_output()
 
     def debug(self, msg, *args, **kwargs):
-        save_log_data(self.name, msg, "debug")
+        # save_log_data(self.name, msg, "debug")
         self._custom_log(super().debug, f"\033[1;35;40m{msg}", *args, **kwargs)
 
     def info(self, msg, *args, **kwargs):
-        save_log_data(self.name, msg, "info")
+        # save_log_data(self.name, msg, "info")
         self._custom_log(super().info, f"\033[1;32;40m{msg}", *args, **kwargs)
 
     def warning(self, msg, *args, **kwargs):
-        save_log_data(self.name, msg, "warning")
+        # save_log_data(self.name, msg, "warning")
         self._custom_log(super().warning, f"\033[1;33;40m{msg}", *args, **kwargs)
 
     def error(self, msg, *args, **kwargs):
-        save_log_data(self.name, msg, "error")
+        # save_log_data(self.name, msg, "error")
         self._custom_log(super().error, f"\033[1;31;40m{msg}", *args, **kwargs)
 
     def critical(self, msg, *args, **kwargs):
-        save_log_data(self.name, msg, "critical")
+        # save_log_data(self.name, msg, "critical")
         self._custom_log(super().critical, f"\033[5;31;40m{msg}\033[0;31;40m", *args, **kwargs)
 
 
