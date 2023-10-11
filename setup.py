@@ -18,7 +18,8 @@ setup(
     include_package_data=True,
     url="https://github.com/scorchSupernova/logger_lib",
     install_requires=[
-        'Django'
+        'Django',
+        'psycopg2-binary'
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
