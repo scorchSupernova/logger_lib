@@ -7,7 +7,8 @@ def connect(dsn: str):
     try:
         db_dsn = dsn
         global conn_cursor
-        conn_cursor = psycopg2.connect(dsn)
+        conn = psycopg2.connect(dsn)
+        conn_cursor = conn.cursor()
         print("connection cursor: ")
         create_table()
         print("Table created")
