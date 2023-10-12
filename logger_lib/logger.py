@@ -59,25 +59,25 @@ class SSLogger(logging.getLoggerClass()):
 
     def debug(self, msg, *args, **kwargs):
         mod_msg = str(self.local_time()) + " | " + str(self.name) + " | " + str(msg)
-        save_data(__name__, json.dumps({"msg": mod_msg}), "debug")
+        save_data(self.name, json.dumps({"msg": mod_msg}), "debug")
         self._custom_log(super().debug, f"\033[1;35;40m{mod_msg}", *args, **kwargs)
 
     def info(self, msg, *args, **kwargs):
         mod_msg = str(self.local_time()) + " | " + str(self.name) + " | " + str(msg)
-        save_data(__name__, json.dumps({"msg": mod_msg}), "info")
+        save_data(self.name, json.dumps({"msg": mod_msg}), "info")
         self._custom_log(super().info, f"\033[1;32;40m{mod_msg}", *args, **kwargs)
 
     def warning(self, msg, *args, **kwargs):
         mod_msg = str(self.local_time()) + " | " + str(self.name) + " | " + str(msg)
-        save_data(__name__, json.dumps({"msg": mod_msg}), "warning")
+        save_data(self.name, json.dumps({"msg": mod_msg}), "warning")
         self._custom_log(super().warning, f"\033[1;33;40m{mod_msg}", *args, **kwargs)
 
     def error(self, msg, *args, **kwargs):
         mod_msg = str(self.local_time()) + " | " + str(self.name) + " | " + str(msg)
-        save_data(__name__, json.dumps({"msg": mod_msg}), "error")
+        save_data(self.name, json.dumps({"msg": mod_msg}), "error")
         self._custom_log(super().error, f"\033[1;31;40m{mod_msg}", *args, **kwargs)
 
     def critical(self, msg, *args, **kwargs):
         mod_msg = str(self.local_time()) + " | " + str(self.name) + " | " + str(msg)
-        save_data(__name__, json.dumps({"msg": mod_msg}), "critical")
+        save_data(self.name, json.dumps({"msg": mod_msg}), "critical")
         self._custom_log(super().critical, f"\033[5;31;40m{mod_msg}\033[0;31;40m", *args, **kwargs)
