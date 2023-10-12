@@ -6,4 +6,4 @@
     [1] Knowledge about PostgreSQL database - https://www.postgresql.org/
 
 ### How to use
-    [1] Just import "git+https://github.com/scorchSupernova/logger_lib.git" in your requirements.txt file.
+    [1] Just add "git+https://github.com/scorchSupernova/logger_lib.git" in your requirements.txt file.
