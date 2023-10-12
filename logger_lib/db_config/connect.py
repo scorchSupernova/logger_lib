@@ -11,9 +11,7 @@ def connect(dsn: str):
         global conn_cursor, conn
         conn = psycopg2.connect(dsn)
         conn_cursor = conn.cursor()
-        print("connection cursor: ", conn_cursor)
         create_table()
-        print("Table created")
     except Exception as e:
         print(e)
 
@@ -39,7 +37,7 @@ def create_table():
 
 def get_session() -> tuple:
     if conn_cursor:
-        print("Connected already")
+        print("Already connected")
         return conn_cursor, conn
     else:
         print("No connection")
